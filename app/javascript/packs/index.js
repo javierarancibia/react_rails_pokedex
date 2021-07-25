@@ -5,22 +5,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import App from '../components/App'
 
-const Hello = props => (
-  <div>Hello {props.name}!</div>
-)
-
-Hello.defaultProps = {
-  name: 'David'
-}
-
-Hello.propTypes = {
-  name: PropTypes.string
-}
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Hello name="React" />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})
+    const node = document.getElementById('data')
+    const data = JSON.parse(node.getAttribute('data'))  
+    ReactDOM.render(
+      <App data={data} />,
+      document.body.appendChild(document.createElement('div')),
+    )
+  })

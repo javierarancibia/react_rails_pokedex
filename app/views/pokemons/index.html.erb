@@ -1,0 +1,6 @@
+<%= javascript_pack_tag 'index' %>
+
+<%= content_tag :div,
+  id: "data",
+  data: @pokemons.to_json do %>
+<% end %>
