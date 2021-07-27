@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_07_25_033749) do
     t.string "name"
     t.string "poke_type"
     t.string "poke_ability"
+    t.string "poke_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

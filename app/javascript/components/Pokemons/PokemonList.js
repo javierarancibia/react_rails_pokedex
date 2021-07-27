@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import PokeModal from "./PokeModal";
 import {
   makeStyles,
   Card,
@@ -19,13 +19,6 @@ const useStyles = makeStyles({
 });
 
 const PokemonList = (props) => {
-  const [getPokemon, setGetPokemon] = useState("");
-
-  const getPoke = (e) => {
-    console.log(e);
-    setGetPokemon(e.target.value);
-    props.onAddPokemon(getPokemon);
-  };
 
   const classes = useStyles();
 
@@ -44,20 +37,13 @@ const PokemonList = (props) => {
             <Typography gutterBottom variant="h5" component="h2">
               {props.name}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
+          <Button size="small" color="primary">
+            Id: { props.pokeId} / { props.weight} KG / Tipo: { props.type}            
+          </Button>
+          <PokeModal pokeId={props.pokeId}/>
+            
           </CardContent>
         </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
-        </CardActions>
       </Card>
   
   );

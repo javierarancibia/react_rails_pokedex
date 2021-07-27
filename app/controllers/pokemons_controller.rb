@@ -2,7 +2,7 @@
 
             def index 
                 pokemons = []
-                response = HTTParty.get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=1")
+                response = HTTParty.get("https://pokeapi.co/api/v2/pokemon?limit=6&offset=1")
                 response = JSON.parse(response.body)
                 response.each do |k, value|
                     if k == "results"
@@ -16,7 +16,7 @@
 
                 # if !pokemons.nil?
                     @poke_json = pokemons.map do |poke|
-                        Pokemon.new(img:poke['sprites']['other']['dream_world']["front_default"], name: poke['forms'][0]['name'], weight: poke['weight'], poke_type: poke['types'][0], poke_ability: poke['abilities'][0])
+                        Pokemon.new(img:poke['sprites']['other']['dream_world']["front_default"], name: poke['forms'][0]['name'], weight: poke['weight'], poke_type: poke['types'][0]['type']['name'], poke_ability: poke['abilities'][0], poke_id: poke['id'])
                                                                 
                     end
                 
