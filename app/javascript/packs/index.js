@@ -11,6 +11,7 @@ import App from '../components/App'
 document.addEventListener('DOMContentLoaded', () => {
     const node = document.getElementById('data')
     const data = JSON.parse(node.getAttribute('data'))  
+
     ReactDOM.render(
       <App data={data} />,
       document.body.appendChild(document.createElement('div')),

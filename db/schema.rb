@@ -13,8 +13,11 @@
 ActiveRecord::Schema.define(version: 2021_07_25_033749) do
 
   create_table "pokemons", force: :cascade do |t|
+    t.string "img"
+    t.string "weight"
     t.string "name"
-    t.string "type"
+    t.string "poke_type"
+    t.string "poke_ability"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

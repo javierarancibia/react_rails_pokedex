@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
 
-  root 'pokemons#index'
-  get '/pokemon', to: 'pokemons#show'
+    root 'pokemons#index'
+    resources :pokemons
 end

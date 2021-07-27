@@ -1,25 +1,33 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import PokemonList from "./PokemonList";
+import PokemonItem from "./PokemonItem";
 
 const Pokemons = (props) => {
+  const [pokemon, setPokemon] = useState([]);
 
-    const [pokemons, setPokemons] = useState([])
+  const handlePokemonAdd = (e) => {
+    setPokemon(e);
+    console.log(pokemon);
+  };
 
-    useEffect(() => {
-        axios.get('http://localhost:3000/pokemon')
-        .then((response) => {
-            setPokemons({...response})
-            console.log(props.data)
-            // console.log(pokemons)
-          })
-    }, [])
+  return (
+    <div>
+      <ul>
+        {props.data.map((poke) => (
+          <PokemonList
+            key={poke.name}
+            onAddPokemon={handlePokemonAdd}
+            img={poke.img}
+            name={poke.name}
+            ability={poke.poke_ability}
+            poke_type={poke.poke_type}
+            weight={poke.weight}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-        return (
-        <div>
-            <h2>{ props.data[0].species.name} </h2>
-            <h2>{ props.data[2].species.name} </h2>
-        </div>
-    )
-}
-
-export default Pokemons
+export default Pokemons;
