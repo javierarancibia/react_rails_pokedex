@@ -1,24 +1,32 @@
-# README
+# Pokedex - Ruby on Rails / React JS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App (test) de pokedex en base a PokeApi
 
-Things you may want to cover:
+## Pasos para instalar clonando el repositorio 🚀
 
-* Ruby version
+*Clonar repositorio 
+```
+git clone https://github.com/javierarancibia/react_rails_pokedex
+```
 
-* System dependencies
+*Ejecutar en terminal (instalacion de dependencias)
 
-* Configuration
+*Inicializar app en terminal
+```
+rails s
+```
 
-* Database creation
 
-* Database initialization
+## Construido con 🛠️
 
-* How to run the test suite
+_Recursos utilizados para el proyecto_
 
-* Services (job queues, cache servers, search engines, etc.)
+* [Ruby on Rails 6](https://rubyonrails.org/) - Framework Backend
+* [React JS](https://reactjs.org/) - Framework Frontend
+* [PokeApi](https://pokeapi.co/) - Rest API
 
-* Deployment instructions
 
-* ...
+
+## Autores ✒️
+
+* **Javier Arancibia** - *Desarrollo* - [javierarancibia](https://github.com/javierarancibia)

@@ -23,11 +23,11 @@ const Pokemons = (props) => {
   };
 
   return (
-    <div>
-      {loading ? <Container><Box><img src={PokeSpinner} /></Box></Container> :
+    <div style={{marginTop: '6rem', marginLeft: '6rem'}}>
+      {loading ? <Container><Box><img src={PokeSpinner} style={{marginLeft: '8rem'}}/></Box></Container> :
       <Container>
-        <Box>
-          <Grid container spacing={3}>
+        <Box display="flex">
+          <Grid container spacing={3} >
             {props.data.map((poke) => (
               <PokemonList
                 key={poke.name}

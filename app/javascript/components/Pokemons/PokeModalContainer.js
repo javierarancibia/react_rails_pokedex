@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import PokeModal from "./PokeModal";
 const PokemonModalContainer = (props) => {
   const [pokemon, setPokemon] = useState([]);
+  const [pokemonId, setPokemonId] = useState([]);
 
-//   useEffect(() => {
-//     fetch(`https://pokeapi.co/api/v2/evolution-chain/${props.pokeId}/`)
-//       .then((response) => {
-//         if (response.ok) {
-//           return response.json();
-//         }
-//         throw new Error("Request failed");
-//       })
-//       .then((responseJson) => {
+  const getFinalId = (e) => {
+    setPokemonId(e)
+  }
+
+  console.log(props.pokeId)
+
+  // useEffect(() => {
+  //   fetch(`https://pokeapi.co/api/v2/evolution-chain/${pokemonId}/`, {mode: 'no-cors'})
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response.json();
+  //       }
+  //       throw new Error("Request failed");
+  //     })
+  //     .then((responseJson) => {
         
-//         return setPokemon(responseJson);
-//       });
-//       console.log(pokemon)
-//   }, [pokemon.length]);
+  //       return setPokemon(responseJson);
+  //     });
+  // }, []);
 
   return (
     <div>
-      <PokeModal pokemonData={pokemon} />
+      <PokeModal pokeId={props.pokeId} onAddId={getFinalId} />
     </div>
   );
 };

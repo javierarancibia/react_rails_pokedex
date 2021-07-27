@@ -16,12 +16,10 @@
 
                 # if !pokemons.nil?
                     @poke_json = pokemons.map do |poke|
-                        Pokemon.new(img:poke['sprites']['other']['dream_world']["front_default"], name: poke['forms'][0]['name'], weight: poke['weight'], poke_type: poke['types'][0]['type']['name'], poke_ability: poke['abilities'][0], poke_id: poke['id'])
+                        Pokemon.new(img:poke['sprites']['other']['dream_world']["front_default"], name: poke['forms'][0]['name'], weight: poke['weight'], poke_type: poke['types'][0]['type']['name'], poke_ability: poke['abilities'][0]['ability']['name'], poke_id: poke['id'])
                                                                 
                     end
-                
 
-                # render json: @poke_json
             end
 
 

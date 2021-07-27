@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PokeModal from "./PokeModal";
+import PokeModalContainer from "./PokeModalContainer";
 import {
   makeStyles,
   Card,
@@ -38,9 +38,9 @@ const PokemonList = (props) => {
               {props.name}
             </Typography>
           <Button size="small" color="primary">
-            Id: { props.pokeId} / { props.weight} KG / Tipo: { props.type}            
+            Id: { props.pokeId} / { props.weight} KG / Tipo: { props.type} / Habilidad: { props.ability}            
           </Button>
-          <PokeModal pokeId={props.pokeId}/>
+          <PokeModalContainer pokeId={props.pokeId}/>
             
           </CardContent>
         </CardActionArea>

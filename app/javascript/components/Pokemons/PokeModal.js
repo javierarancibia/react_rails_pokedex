@@ -26,6 +26,7 @@ const PokeModal = (props) => {
 
   const handleOpen = () => {
     setOpen(true);
+    onAddId(props.pokeId)
     
   };
 
@@ -33,19 +34,7 @@ const PokeModal = (props) => {
     setOpen(false);
   };
 
-  useEffect(() => {
-    
-    fetch(`https://pokeapi.co/api/v2/evolution-chain/${props.pokeId}/`, { mode: 'no-cors'})
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error("Request failed");
-      })
-      .then((responseJson) => {
-        return setPokemon(responseJson);
-      });
-  }, [props.pokeId]);
+
 
   return (
     <div>
@@ -68,13 +57,13 @@ const PokeModal = (props) => {
         <Fade in={open}>
           <div className={classes.paper}>
             <h2>Animated React Modal</h2>
-            <p>
-              {pokemon.length > 0 ? (
-               <h2> { pokemon.id } </h2>
+            {/* <p>
+              {props.pokemonData.length > 0 ? (
+               <h2> { pokemonData.id } </h2>
               ) : (
                 <h1>Esperando info...</h1>
               )}
-            </p>
+            </p> */}
           </div>
         </Fade>
       </Modal>
