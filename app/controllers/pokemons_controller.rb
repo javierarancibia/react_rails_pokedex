@@ -2,7 +2,7 @@
 
             def index 
                 pokemons = []
-                response = HTTParty.get("https://pokeapi.co/api/v2/pokemon?limit=10&offset=1")
+                response = HTTParty.get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=1")
                 response = JSON.parse(response.body)
                 response.each do |k, value|
                     if k == "results"
